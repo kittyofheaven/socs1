@@ -1,0 +1,93 @@
+START
+
+DECLARE InputOutputFile phoneBook
+OPEN phoneBook "contact.dat"
+
+DEFINE Contact RECORD
+  STRING Name
+  STRING PhoneNumber
+END RECORD
+
+MODULE addContact
+  Input Contact.Name
+  Input Contact.PhoneNumber
+  WRITE Contact RECORD to phoneBook
+END MODULE addContact
+
+MODULE searchContactByName()
+  INPUT name
+  READ phoneBook Contact RECORD
+
+  DECLARE BOOLEAN isFound
+  SET isFound = FALSE
+
+  WHILE NOT EOF AND isFound EQUALS TO FALSE
+    IF Contact.Name EQUALS TO name THEN
+      SET isFound = TRUE 
+      DISPLAY("Contact Found !!!")
+      DISPLAY("Name : ", Contact.Name)
+      DISPLAY("Number : ", Contact.PhoneNumber)
+    END IF
+
+    READ NEXT PhoneBook Contact RECORD
+  END WHILE
+
+  IF isFound EQUALS TO FALSE THEN
+    DISPLAY("Contact not found!")
+  END IF
+
+END MODULE searchContactByName
+
+MODULE deleteContactByName()
+  INPUT name
+  READ PhoneBook Contact RECORD
+
+  DECLARE BOOLEAN isFound
+  SET isFound = FALSE
+
+  WHILE NOT EOF AND isFound EQUALS TO FALSE
+    IF Contact.Name EQUALS TO name THEN
+      SET isFound = TRUE
+      DELETE Contact RECORD FROM phoneBook
+      DISPLAY("Contact has succesfully been deleted!")
+    END IF
+
+    READ NEXT phoneBook Contact RECORD
+  END WHILE
+
+  IF isFound EQUALS TO FALSE THEN
+    Display("Contact not found!")
+  END IF
+
+END MODULE deleteContactByName
+
+MODULE updateContactByName
+  INPUT name
+  READ PhoneBook Contact RECORD
+
+  WHILE NOT EOF(PhoneBook) AND isFound EQUALS TO FALSE
+    IF Contact.Name EQUALS TO name THEN
+      SET isFound = TRUE
+      INPUT Contact.Name
+      INPUT Contact.PhoneNumber
+      DISPLAY ("Contact succesfully updated!")
+    END IF
+
+    READ NEXT phoneBook Contact RECORD
+  END WHILE
+
+  IF isFound EQUALS TO FALSE THEN
+    Display("Contact not found!")
+  END IF
+END MODULE updateContactByName
+
+MODULE main()
+  DECLARE INTEGER choice
+
+  WHILE choice > 0  AND choice < 5
+    INPUT choice
+    
+    IF choice EQUALS TO 1 THEN
+
+    ELSE choice EQUALS 
+

@@ -1,0 +1,28 @@
+START
+
+FUNCTION fibbonaci (INTEGER n)
+  DECLARE INTEGER prev, now, temp;
+  SET prev = 0
+  SET now = 1
+
+  IF n EQUALS TO 0 THEN
+    RETURN 0
+  ELSE IF n EQUALS TO 1 THEN
+    RETURN 1
+  END IF
+
+  FOR INTEGER i = 2 TO n 
+    SET temp = now
+    SET now = prev + now 
+    SET prev = temp
+  END FOR
+
+  RETURN now
+END FUNCTION fibbonaci
+
+
+MODULE main()
+  DECLARE INTEGER theNumber
+  INPUT theNumber
+  DISPLAY("fibbonaci ke ", theNumber, " adalah ", fibbonaci(theNumber), ENDL)
+END MODULE main

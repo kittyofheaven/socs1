@@ -1,0 +1,28 @@
+START
+FUNCTION BOOLEAN isPrime( INTEGER number )
+    DECLARE BOOLEAN isValid
+    SET isValid = True
+
+    IF number EQUALS TO 1 THEN
+      RETURN False
+    END IF
+
+    FOR INTEGER i = 2 TO sqrt(number) THEN:
+      IF number MOD i EQUALS TO 0 THEN
+        SET isValid = False
+      END IF
+    END FOR
+
+  RETURN isValid
+END FUNCTION isPrime
+
+MODULE main()
+  DECLARE INTEGER inputNumber
+  INPUT inputNumber
+
+  IF isPrime(inputNumber) THEN
+    DISPAY( inputNumber ,"is a prime number", ENDL)
+  ELSE 
+    DISPAY( inputNumber ,"is not a prime number", ENDL)
+  END IF
+END MODULE main

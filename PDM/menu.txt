@@ -1,0 +1,148 @@
+internal file=nama file di dalam program kita 
+external file= nama di luar program(file sebenarnya)
+
+start 
+declare Input(buat read)Output(buat write   datanya)File(mau ngebabaca data di dalam file)
+open phoneBook"contact.data"
+
+module main()
+	declare integer choice
+	input choice 
+	
+	Define Contact Record
+		string nama
+		string phoneNumber
+	End Record
+	
+		
+	while choice > 5 AND choice < 0
+		if choice is 1 then
+			Call createContact()
+		else if choice is than 2 then 
+			Call searchByName()
+		else if choice is than 3 then 
+			Call modifyNumber()
+		else if choice is than 4 then 
+			Call deleteContact()
+		else
+			Display"Invalid number"
+		end if
+	end while
+	
+
+	
+	Module createContact()
+		Display "enter new contct name: "
+		input Contact.nama
+		Display "enter new phone number: "
+		input Contact.phoneNumber
+		
+		
+		write Contact Record to phoneBook 
+	End Module
+	
+	Module searchByName()
+		Display stirng nama
+		Declare Boolean founded= False
+		Display "Enter name to found: "
+		Input name
+		
+		Read Contact Record // baca contact record yang pertama
+		while not EOF(phoneBook) AND founded is false// sampe blom nemu 
+			if Contact.nama is equal name then//buat nyari apakah ada nama contact yang sessuai dengan inputan user
+				Display"Contact Founded!"
+				Display "Name: ",Contact.nama
+				Display "Phone: ",Contact.phoneNumber
+				founded =true
+			End if
+			
+			if founded is false than 
+				Display"Contact Not Found"
+			End if
+			
+		
+			Read next Contact Record 
+		End while
+	End Module
+	
+	Module modifyPhoneNumber()
+	Display stirng nama, newPhoneNumber
+		Declare Boolean founded= False
+		Display "Enter name to found: "
+		Input name
+		Display"Enter new phone number: "
+		Input newPhoneNumber
+		
+		Read phoneBook Contact Record // baca contact record yang pertama
+		while not EOF(phoneBook) AND founded is false// sampe blom nemu EOF dan founded masi salah maka akan terus ke looping
+			if Contact.nama is equal name then//buat nyari apakah ada nama contact yang sessuai dengan inputan user
+				Set Contact.phoneNumber = newPhoneNumber
+				write Contact Record to phoneNook
+				Display"Contact Updated!"
+				founded=true
+				
+			End if
+		
+		
+			if founded is false than 
+				Display"Contact Not Found"
+			End if
+			
+			Read next Contact Record 
+		End while
+	End Module
+	
+	
+	Module deletePhoneNumber()
+	Display stirng nama, 
+		Declare Boolean founded= False
+		Display "Enter name to delete: "
+		Input name
+		
+		Read Contact Record // baca contact record yang pertama
+		while not EOF(phoneBook) AND founded is false// sampe blom nemu 
+			if Contact.nama is equal name then//buat nyari apakah ada nama contact yang sessuai dengan inputan user
+				Delete Contact Record from phoneBook
+				founded=true
+			End if
+
+		
+			if founded is false than 
+				Display"Contact Not Found"
+			End if
+			
+			Read next Contact Record 
+		End while
+	End Module
+	
+
+close phoneBook
+End
+
+
+
+//record kumpulan data yang dijadikan satu 
+
+
+FILE
+//Membuat koneski dengan file
+Declare <jenisFile> <namefileInternal>
+Open <namefileInternal> "<nameFileAsli.ext>"
+Close <namefileInternal>
+
+
+-jenisFile: InputFile, OutputFile, InputOtputFile
+
+//Menulis data dalam file
+Write <BLABLA> record to <nameFileInternal>
+
+//membaca data dalam file
+Read <BLABLA> record
+Read Next <BLABLA> record
+
+//menghapus data dari file
+Delete<BLABLA> recode from<nameFileInternal>
+
+
+GUE
+

@@ -1,0 +1,85 @@
+MODULE percobaan(Integer ref a)
+  SET a = a + 1
+
+END MODULE
+
+FUNCTION Integer percobaan2(Integer a)
+  SET a = a + 1
+  RETURN a
+END FUNCTION
+
+
+MODULE main()
+  DECLARE Integer x = 1, y = 1
+
+  
+  CALL percobaan(x)
+
+
+  SET y = CALL percobaan2(y)
+
+
+
+  DISPLAY x, y
+
+END MODULE
+
+
+
+
+
+
+
+
+MODULE percobaan(Integer ref a)
+  SET a = 10
+
+END MODULE
+
+FUNCTION Integer percobaan2(Integer a)
+  SET a = a + 1
+  RETURN a
+END FUNCTION
+
+
+MODULE main()
+
+
+END MODULE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

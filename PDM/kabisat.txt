@@ -1,0 +1,19 @@
+START
+MODULE main()
+  DECLARE INETEGER tahun
+  INPUT tahun
+
+  IF tahun MOD 4 EQUALS TO 0 THEN
+    IF tahun MOD 100 EQUALS TO 0 THEN
+      IF tahun MOD 400 EQUALS TO 0 THEN
+        DISPLAY("Kabisat", ENDL)
+      ELSE 
+        DISPLAY("Bukan kabisat", ENDL)
+      END IF
+    ELSE 
+      DISPLAY("Kabisat", ENDL)
+    END IF
+  END IF
+
+END MODULE main
+END

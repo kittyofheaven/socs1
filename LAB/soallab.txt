@@ -1,0 +1,50 @@
+### Format Pengumpulan:
+Extension File : .c / .cpp
+File harus di zip dengan format NIM_NAMA
+Lalu kumpulkan file di link ini : https://drive.google.com/drive/folders/1h-TZA4hRUM_v06B2toBNWykgD_SPhnFi?usp=sharing
+
+### Soal:
+Buat program dalam bahasa C untuk menyimpan **Data Mahasiswa** yang memiliki informasi berikut:
+
+Program harus memiliki menu utama dengan pilihan:
+1. **Insert Mahasiswa** - Memasukkan data mahasiswa baru
+  Data Mahasiswa:
+  - `UserId` (ID random untuk setiap mahasiswa, 16 karakter)
+    - Angka(0-9)
+    - Huruf Besar (A-Z)
+    - Huruf Kecil (a-z)
+    - Simbol {'@','#','$','&','!'}
+  - `UserName` (Nama mahasiswa, maksimal 25 karakter, minimal 5 karakter boleh spasi)
+  - `UserEmail` (Email mahasiswa, maksimal 25 karakter dan harus mengandung '@ti22.com', dengan minimal ada 1 huruf didepan @ti22.com)
+  - `Gender` (Jenis kelamin mahasiswa, diisi dengan angka 1 untuk Laki-laki dan 0 untuk Perempuan)
+  
+  Berikan konfirmasi kepada user apakah ingin menambahkan mahasiswa yang sudah dibuat (Y/N).
+  Tampilkan "Press Enter to continue..." sebelum balik ke menu utama.
+
+2. **View Mahasiswa** - Melihat 10 data mahasiswa terbaru yang tersimpan
+  - Contoh output saat memilih opsi "View Mahasiswa":
+    ```
+    No 1.
+    UserID : U1234!@Jhiu!@321
+    Username : Budi Setiawan
+    Email : hazel@ti22.com
+    Gender : 1
+    ====================
+    No 2.
+    UserID : U123!AnHij012345
+    Username : Edwin Hendly
+    Email : edwin@ti22.com
+    Gender : 1
+    ====================
+    ```
+
+  Tampilkan "Press Enter to continue..." sebelum balik ke menu utama.
+
+3. **Update Mahasiswa** - Tampilkan semua data mahasiswa dan perbarui data mahasiswa berdasarkan nomor
+  - Jika mahasiswa tidak ditemukan maka minta user untuk prompt kembali.
+  - Berikan konfirmasi kepada user apakah ingin mengubah mahasiswa yang sudah dipilih (Y/N)
+  
+  Tampilkan "Press Enter to continue..." sebelum balik ke menu utama.
+
+4. **Exit** - Keluar dari program
+  - User harus ditanya "Are you sure want to exit this program (y/n)" jika 'y' maka keluar, jika 'n' maka kembali ke menu utama.
