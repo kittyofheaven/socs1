@@ -15,7 +15,7 @@ long long int teamTreesRecursion(int N, long long int result){
 void teamTrees(int kasus){
   int N;
   scanf("%d", &N);
-
+  
   printf("Case #%d: %lld\n", kasus, teamTreesRecursion(N, 0));
 }
 

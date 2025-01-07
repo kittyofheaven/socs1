@@ -1,0 +1,12 @@
+Max Safe Area in Minesweeper
+Given a board of size n x n.
+Given m mines in the board.
+Find the maximum safe area in the board.
+
+Format Input:
+The first line contains two integers n and m (1 ≤ n ≤ 100, 0 ≤ m ≤ n^2).
+The next m lines contain two integers x and y (0 ≤ x, y < n) which represent the position of the mines.
+
+Format Output:
+The output contains n lines, each line containing n characters. The board only contains '.', '*', and digits from '1' to '8'. The character is either '.' or a digit from '1' to '8', representing the number of mines around the cell. The character '*' represents a mine.
+The last line contains the maximum safe area.

@@ -6,32 +6,29 @@ void swap(int *a, int*b){
   *b = temp;
 }
 
-int partition(int arr[], int low, int high){
+int partition(int *arr, int low, int high){
   int pivot = arr[high];
-
-  int i = low - 1; // karena pointer i terletak sebelum elemen pertama array, sedangkan pointer j terletak di elemen pertama array
-
-  for(int j = low; j <= high - 1 ; ++j){
+  int i = low - 1;
+  for(int j = low; j < high; ++j){
     if(arr[j] < pivot){
-      i++; // only increment i when the elemen is < pivot;
+      i++;
       swap(&arr[i], &arr[j]);
     }
-
   }
-  // Move pivot after smaller elements and
-  // return its position
-  swap(&arr[i + 1], &arr[high]); // tempatkan pivot ke posisinya
-  return i + 1; // return pivot index
+  i++;
+  swap(&arr[i], &arr[high]);
+  return i;
 }
 
-void quicksort(int arr[], int low, int high){
+void quickSort(int *arr, int low, int high){
   if(low < high){
-    int pivot = partition(arr, low, high);
-
-    quicksort(arr, low, pivot - 1);
-    quicksort(arr, pivot + 1, high);
+    int p = partition(arr, low, high);
+    quickSort(arr, low, p-1);
+    quickSort(arr, p+1, high);
   }
 }
+
+
 
 void printArray(int arr[], int size) {
     for (int i = 0; i < size; i++) {
@@ -46,7 +43,7 @@ int main(){
 
   printf("%d\n", n);
 
-  quicksort(arr, 0, n-1);
+  quickSort(arr, 0, n-1);
   printArray(arr, n);
   return 0;
 }

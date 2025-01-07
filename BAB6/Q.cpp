@@ -6,7 +6,7 @@ int rec(int x1, int y1, int x2, int y2, int count){
   // printf("%d %d %d %d\n", x1, y1, x2, y2);
   int moves[10][2] = {{2,1}, {2,-1}, {-2,1}, {-2,-1}, {1,2}, {1,-2}, {-1,2}, {-1,-2}};
   if(count >= 6) return -1;
-  for(int i = 0; i <8; ++i){
+  for(int i = 0; i < 8; ++i){
     int newX1 = x1+moves[i][0];
     int newY1 = y1+moves[i][1];
 
